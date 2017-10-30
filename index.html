@@ -1,0 +1,112 @@
+<html>
+  <body>
+    <h1>
+      Welcome to my Library!
+    </h1>
+    <div id='queryBookContainer'>
+      <h2>
+        I heard you wanted to know about a certain book...
+      </h2>
+      <div id='query-ISBNEntry'>
+        <p>
+          Enter ISBN:
+          <input id='queryByISBN' type='text'> </input>
+        </p>
+      </div>
+      <input id='query-book' type='submit'> </input>
+      <div id='queryResult'>
+
+      </div>
+    </div>
+    <div id='loanBookToUser'>
+      <h2>
+        So you want to take a book?
+      </h2>
+      <div id='borrowBookContainer'>
+        <div id='borrow-ISBNEntry'>
+          <p>
+            Enter ISBN:
+            <input id='queryByISBN' type='text'> </input>
+          </p>
+        </div>
+        <div id='usernameEntry'>
+          <p>
+            Enter username:
+            <input id='inputUsername' type='text'> </input>
+          </p>
+        </div>
+        <input id='borrow-book' type='submit'> </input>
+        <div id='borrow-result'>
+
+        </div>
+      </div>
+    </div>
+    <div id='returnBookToLibrary'>
+      <h2>
+        So you want to return a book?
+      </h2>
+      <div id='returnBookContainer'>
+        <div id='return-ISBNEntry'>
+          <p>
+            Enter ISBN:
+            <input id='queryByISBN' type='text'> </input>
+          </p>
+        </div>
+        <div id='usernameEntry'>
+          <p>
+            Enter username:
+            <input id='inputUsername' type='text'> </input>
+          </p>
+        </div>
+        <input id='return-book' type='submit'> </input>
+      </div>
+      <div id='borrow-result'>
+          
+      </div>
+    </div>
+    <div id='addUserToDB'>
+      <h2>
+        So you want to add a new user?
+      </h2>
+      <div id='addUserContainer'>
+        <div id='user-add-result' style='font-size:12'>
+            
+        </div>
+        <div id='fnameEntry'>
+          <p>
+            Enter first name:
+            <input id='inputFirstName' type='text'> </input>
+          </p>
+        </div>
+        <div id='lnameEntry'>
+          <p>
+            Enter last name:
+            <input id='inputLastName' type='text'> </input>
+          </p>
+        </div>
+        <div id='usernameEntry'>
+          <p>
+            Enter username:
+            <input id='inputUsername' type='text'> </input>
+          </p>
+        </div>
+        <input id='add-user' type='submit'> </input>
+      </div>
+    </div>
+  </body>  
+</html>
+
+<script>
+  function init() {
+    document.getElementById('add-user').onclick = function() {
+      var fname = document.getElementById('inputFirstName').value;
+      var lname = document.getElementById('inputLastName').value;
+      var username = document.getElementById('inputUsername').value;
+      if(fname.length <= 1 || lname.length <= 1 || username.length <= 4) {
+        document.getElementById('user-add-result').style = 'color:red';
+        document.getElementById('user-add-result').textContent = 'Bad Data Entry';
+      }
+    }
+  }
+  window.onload = init;
+</script>
